@@ -11,13 +11,11 @@ services:
       - key: NODE_ENV
         value: production
 
-  - type: static_site
+  - type: web
     name: corp-site-frontend
+    env: static
     plan: free
     region: frankfurt
     rootDir: frontend
-    buildCommand: ""
+    buildCommand: ''
     staticPublishPath: .
-    envVars:
-      - key: NODE_ENV
-        value: production
