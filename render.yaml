@@ -15,7 +15,6 @@ services:
     name: corp-site-frontend
     env: static
     plan: free
-    region: frankfurt
     rootDir: frontend
     buildCommand: ''
     staticPublishPath: .
