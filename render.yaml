@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: corp-site-backend
+    env: node
+    plan: free
+    region: frankfurt
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - type: static_site
+    name: corp-site-frontend
+    plan: free
+    region: frankfurt
+    rootDir: frontend
+    buildCommand: ""
+    staticPublishPath: .
+    envVars:
+      - key: NODE_ENV
+        value: production
