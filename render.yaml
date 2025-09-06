@@ -2,7 +2,6 @@ services:
   - type: web
     name: corp-site-backend
     env: node
-    plan: free
     region: frankfurt
     rootDir: backend
     buildCommand: npm install
@@ -14,7 +13,6 @@ services:
   - type: web
     name: corp-site-frontend
     env: static
-    plan: free
     rootDir: frontend
     buildCommand: ''
     staticPublishPath: .
