@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: corp-site-backend
+    name: corp-site
     env: node
     region: frankfurt
     rootDir: backend
@@ -9,10 +9,3 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-
-  - type: web
-    name: corp-site-frontend
-    env: static
-    rootDir: frontend
-    buildCommand: ''
-    staticPublishPath: .

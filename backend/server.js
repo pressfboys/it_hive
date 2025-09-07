@@ -10,12 +10,15 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Отдаём фронт из папки frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-app.get('/', (req, res) => {
+// Все запросы, которые не /api, отправляем на index.html
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
+// API
 app.post('/api/contact', (req, res) => {
   console.log(req.body);
   res.json({ ok: true });
